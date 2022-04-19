@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>YouTube Simulator</title>
+    
+</head>
+<body>
+    <!--this is the header-->
+    <header>
+        <h1>YouTube Simulator</h1>
+    <!--creating the navbar for the search-->
+    <nav>
+        <div class="search">
+        <input type="search" id="srch_query" placeholder="Search">
+        <button type="submit" id="srch_btn">search</button>
+        </div>
+    </nav>
+    </header>
+    
+    <!--Below is the section to display the content for the search query-->
+    <section id="content"></section>
+    <!--Creating a pagination-->
+    <div id="pagination"></div>
+
+    
+    <!--Finally a footer--> 
+    <footer><p>&#169; Footer
+        <script>
+            document.write(new Date().getFullYear());
+        </script>
+    </p></footer>
+
+
+    <!--Template: it contains the structure for showing each item for the search query-->
+    <script type="template" id="sample_template">
+        
+        {{#snippets}}
+        <div class="srch_items" >
+            
+            <div class="image" ><a href="https:youtube.com/watch?v={{id.videoId}}"><img src="{{snippet.thumbnails.medium.url}}" alt="thumbnails"></a></div>
+            <div class="desc" >
+                <h2><a href="https:youtube.com/watch?v={{id.videoId}}">{{snippet.title}}</a></h2>
+                <p><a href="https:youtube.com/watch?v={{id.videoId}}">{{snippet.description}}</a></p>
+            </div>
+            <div class="view_date" >
+                <p><a href="https:youtube.com/watch?v={{id.videoId}}">{{snippet.viewCount}} views . {{snippet.publishedAt}}</a></p>
+            </div>
+        
+            <div class="channel_title">
+                <a href="https://www.youtube.com/channel/{{snippet.channelId}}">{{snippet.channelTitle}}</a>
+            </div>
+        </div>
+        {{/snippets}}
+    </script>
+<!-- template for pagination-->
+    <script type="template" id="pagination_no">
+        {{#pages}}
+        <div class="page_no"><p>{{itr}}</p></div>
+        {{/pages}}
+    </script>
+
+    <!--including a mustache.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <!--Attaching the javascript file-->
+    <script src="./assets/js/loadData.js"></script>
+    <script src="./assets/js/pagination.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
