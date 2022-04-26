@@ -42,14 +42,16 @@ nav .search button{
 /* Styling the section */
 #content{
     margin-top: 5vh;
-    padding-bottom: 2vh;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
+    width: 200vw;
+    position: relative;
+    display: flex;
 }
 .srch_items{
-    margin-left: 1vw;
-    width: 6.5cm;
+    margin-left: .5vw;
+    margin-right: .5vw;
+    width: 40vw;
+    height: inherit;
+    display: inline-block;
     border-radius:1vh;
     border: 2px solid black;
     background-color: rgb(246, 244, 244);
@@ -96,6 +98,71 @@ nav .search button{
     font-size: 12px;
     color: rgb(149, 152, 152);
 }
+@media  (max-width:1441px) {
+    #content{
+        width: 100vw;
+    }
+    .srch_items{
+        width: 20vw;
+    }
+}
+@media  (max-width:1025px) {
+    #content{
+        width: 125vw;
+    }
+    .srch_items{
+        width: 25vw;
+    }
+}
+@media  (max-width:769px) {
+    #content{
+        
+        width: 165vw;
+    }
+    .srch_items{
+        width: 33vw;
+    }
+}
+@media  (max-width:426px) {
+    #content{
+        width: 250vw;
+    }
+    .srch_items{
+        width: 50vw;
+    }
+}
+@media  (max-width:376px) {
+    #content{
+        width: 500vw;
+    }
+    .srch_items{
+        width: 100vw;
+    }
+}
+#slider_sec {
+    display: flex;
+    justify-content: space-between;
+}
+#slide{
+    margin-top: 1vh;
+    text-align: center;
+}
+#slide .sld{
+    color: white;
+    margin: 1vh 1vw;
+    display: inline-block;
+    width: .3cm;
+    height: .3cm;
+    cursor: pointer;
+    border-radius: .3cm;
+    border: 2px solid red;
+}
+#prev, #next{
+    padding: 1% 2%;
+    cursor: pointer;
+}
+
+
 /* pagination*/
 #pagination{
     margin-top: 5vh;
